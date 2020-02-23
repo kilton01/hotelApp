@@ -14,6 +14,7 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.TimePicker;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnFailureListener;
@@ -35,8 +36,11 @@ public class restaurantBookMe extends AppCompatActivity {
     private DatabaseReference ref;
     private LinearLayout layout;
 
-    private static AlertDialog.Builder alert;
-    private static AlertDialog dialog;
+    private static AlertDialog.Builder alert,alert1;
+    private static AlertDialog dialog,dialog1;
+
+    private int hour,minute;
+    private String remainderTime;
 
     HashMap<String,String> map = new HashMap<>();
 
@@ -53,15 +57,57 @@ public class restaurantBookMe extends AppCompatActivity {
         CheckInTime = findViewById(R.id.checkInTime);
         reserve = findViewById(R.id.reserve);
         layout = findViewById(R.id.layout);
+        time = findViewById(R.id.imgStart1);
 
         reserve.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                reserveTable();
+                if (nameOfCustomer.getText().toString().equals("") && seatNumber.getText().toString().equals("") && CheckInTime.getText().toString().equals("")){
+                    Toast.makeText(restaurantBookMe.this, "Empty Slot", Toast.LENGTH_SHORT).show();
+                }else {
+                    reserveTable();
+                }
             }
         });
 
+        time.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                LayoutInflater layoutInflater = LayoutInflater.from(restaurantBookMe.this);
+                View view1 = layoutInflater.inflate(R.layout.layout_set_reminder,layout,false);
+
+                final TimePicker timePicker = view1.findViewById(R.id.currentTime);
+                final Button setButton = view1.findViewById(R.id.setBtn);
+                final Button cancelButton = view1.findViewById(R.id.cancel);
+
+                alert1 = new AlertDialog.Builder(restaurantBookMe.this);
+                alert1.setView(view1);
+                dialog1 = alert1.create();
+                dialog1.show();
+
+                setButton.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        hour = timePicker.getCurrentHour();
+                        minute = timePicker.getCurrentMinute();
+
+                        remainderTime = hour + ":" + minute;
+                        CheckInTime.setText(remainderTime);
+                        dialog1.dismiss();
+                    }
+                });
+
+                cancelButton.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        dialog1.dismiss();
+                    }
+                });
+            }
+        });
     }
+
+
 
     public void reserveTable(){
         ref.addListenerForSingleValueEvent(new ValueEventListener() {
@@ -69,13 +115,11 @@ public class restaurantBookMe extends AppCompatActivity {
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 for (DataSnapshot snapshot: dataSnapshot.getChildren()){
                     for (DataSnapshot snapshot1: snapshot.getChildren()){
-                        Log.d("Log",snapshot1.toString());
-
-                            if (snapshot1.getKey().contains("True")){
-                                Log.d("View",snapshot1.getKey());
+                        Log.d("View",snapshot1.getValue().toString());
+                        if (snapshot1.getValue().toString().contains("True")){
                                 fullAlert("Sorry, all slot has been booked");
-
                             }else{
+
                                 map.put("Name Of Customer",nameOfCustomer.getText().toString());
                                 map.put("Seat Number", seatNumber.getText().toString());
                                 map.put("Time Of Arrival", CheckInTime.getText().toString());
