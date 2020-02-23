@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:layout_margin="10dp"
+    android:id="@+id/layout"
+    tools:context=".restaurantBookMe">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="RESERVATION"
+        android:textSize="24dp"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="20dp"
+            android:text="Name"/>
+
+        <EditText
+            android:id="@+id/nameOfCustomer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Name"
+            style="@style/EditTextStyle"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="10dp"
+    android:orientation="vertical">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="20dp"
+        android:text="Seat Number"/>
+
+    <EditText
+        android:id="@+id/seatNumber"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Number of Seat"
+        style="@style/EditTextStyle"/>
+
+</LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="20dp"
+            android:text="Time"/>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <EditText
+                android:id="@+id/checkInTime"
+                style="@style/EditTextStyle"
+                android:layout_width="match_parent"
+                android:hint="Arrival Time"
+                android:layout_height="wrap_content"
+                android:inputType="date"/>
+
+            <ImageView
+                android:id="@+id/imgStart1"
+                style="@style/EditTextStyle"
+                android:layout_width="45dp"
+                android:layout_height="34dp"
+                android:layout_alignTop="@+id/checkInTime"
+                android:layout_alignBottom="@+id/checkInTime"
+                android:layout_alignParentRight="true"
+                android:layout_marginTop="0dp"
+                android:layout_toStartOf="@+id/checkInTime"
+                android:layout_toLeftOf="@+id/checkInTime"
+                android:src="@drawable/ic_access_time_black_24dp"/>
+
+        </RelativeLayout>
+
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/reserve"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="Reserve"
+        style="@style/BookButton"
+        android:layout_marginTop="20dp"/>
+
+
+
+</LinearLayout>

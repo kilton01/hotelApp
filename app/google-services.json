@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "202703515691",
+    "firebase_url": "https://belleviewhotel-8c342.firebaseio.com",
+    "project_id": "belleviewhotel-8c342",
+    "storage_bucket": "belleviewhotel-8c342.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:202703515691:android:dfa979c9e79b5c9e6e7a6e",
+        "android_client_info": {
+          "package_name": "com.example.belleviewhotel"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "202703515691-nhlh5samo48r37kqsviellgpomm8pooe.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.belleviewhotel",
+            "certificate_hash": "19bab9e34511ff09b886768d402b70d3e9b5aa17"
+          }
+        },
+        {
+          "client_id": "202703515691-t9hf3cno1g4np6voheinfe82dbqum9eu.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAnlezas7DiQ4qFgSqYXrivqv1hqOzniWo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "202703515691-t9hf3cno1g4np6voheinfe82dbqum9eu.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

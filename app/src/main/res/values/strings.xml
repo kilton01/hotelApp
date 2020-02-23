@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">BelleView Hotel</string>
+    <string name="Hotel">Hotel</string>
+    <string name="Restaurant">Restaurant</string>
+    <string name="promptMakeReservation">Make Reservation</string>
+    <string name="promptAvailable">Popular Rooms</string>
+    <string name="promptDishes">Dishes Available</string>
+
+
+</resources>

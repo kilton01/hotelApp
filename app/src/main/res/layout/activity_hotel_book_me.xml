@@ -1,0 +1,322 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_margin="10dp"
+    android:id="@+id/llayout"
+    android:orientation="vertical"
+    tools:context=".hotelBookMe">
+
+  <ScrollView
+      android:layout_width="match_parent"
+      android:layout_height="match_parent">
+
+      <LinearLayout
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:orientation="vertical">
+
+          <TextView
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:text="BOOK A ROOM"
+              android:textSize="24dp"
+              android:layout_marginBottom="20dp"/>
+
+          <LinearLayout
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:orientation="vertical"
+              android:layout_marginBottom="20dp">
+
+              <TextView
+                  android:layout_width="match_parent"
+                  android:layout_height="wrap_content"
+                  android:text="Room Details"
+                  android:textSize="24dp"/>
+
+              <LinearLayout
+                  android:layout_width="match_parent"
+                  android:layout_height="wrap_content"
+                  android:orientation="horizontal"
+                  android:weightSum="2">
+
+                  <TextView
+                      android:layout_width="match_parent"
+                      android:layout_height="wrap_content"
+                      android:layout_weight="1"
+                      android:text="Room ID"
+                      android:textSize="20dp"/>
+
+                  <TextView
+                      android:id="@+id/roomID"
+                      android:layout_width="match_parent"
+                      android:layout_height="wrap_content"
+                      android:layout_weight="1"
+                      android:text="Room ID"
+                      android:textSize="20dp"/>
+
+              </LinearLayout>
+
+          </LinearLayout>
+
+
+          <LinearLayout
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:orientation="horizontal"
+              android:weightSum="2">
+
+              <LinearLayout
+                  android:layout_width="match_parent"
+                  android:layout_height="wrap_content"
+                  android:orientation="vertical"
+                  android:layout_weight="1"
+                  android:layout_marginRight="5dp">
+
+                  <TextView
+                      android:layout_width="match_parent"
+                      android:layout_height="wrap_content"
+                      android:text="Check-in"
+                      android:textSize="18dp"/>
+
+                  <RelativeLayout
+                      android:layout_width="match_parent"
+                      android:layout_height="wrap_content">
+
+                      <EditText
+                          android:id="@+id/checkIn"
+                          style="@style/EditTextStyle"
+                          android:layout_width="match_parent"
+                          android:hint="Arrival Date"
+                          android:layout_height="wrap_content"
+                          android:inputType="date"/>
+
+                      <ImageView
+                          android:id="@+id/imgStart"
+                          style="@style/EditTextStyle"
+                          android:layout_width="45dp"
+                          android:layout_height="34dp"
+                          android:layout_alignTop="@+id/checkIn"
+                          android:layout_alignBottom="@+id/checkIn"
+                          android:layout_alignParentRight="true"
+                          android:layout_marginTop="0dp"
+                          android:layout_toStartOf="@+id/checkIn"
+                          android:layout_toLeftOf="@+id/checkIn"
+                          android:src="@android:drawable/ic_menu_my_calendar" />
+
+                  </RelativeLayout>
+
+
+              </LinearLayout>
+
+              <LinearLayout
+                  android:layout_width="match_parent"
+                  android:layout_height="wrap_content"
+                  android:orientation="vertical"
+                  android:layout_weight="1"
+                  android:layout_marginLeft="5dp">
+
+                  <TextView
+                      android:layout_width="match_parent"
+                      android:layout_height="wrap_content"
+                      android:text="Check-out"
+                      android:textSize="18dp"/>
+
+                  <RelativeLayout
+                      android:layout_width="match_parent"
+                      android:layout_height="wrap_content">
+
+                      <EditText
+                          android:id="@+id/checkOut"
+                          style="@style/EditTextStyle"
+                          android:layout_width="match_parent"
+                          android:layout_height="wrap_content"
+                          android:hint="Departure Date"
+                          android:inputType="date"/>
+
+                      <ImageView
+                          android:id="@+id/imgEnd"
+                          style="@style/EditTextStyle"
+                          android:layout_width="45dp"
+                          android:layout_height="34dp"
+                          android:layout_alignTop="@+id/checkOut"
+                          android:layout_alignBottom="@+id/checkOut"
+                          android:layout_alignParentRight="true"
+                          android:layout_marginTop="0dp"
+                          android:layout_toStartOf="@+id/checkOut"
+                          android:layout_toLeftOf="@+id/checkOut"
+                          android:src="@android:drawable/ic_menu_my_calendar" />
+
+                  </RelativeLayout>
+
+              </LinearLayout>
+
+          </LinearLayout>
+
+          <Button
+              android:layout_marginTop="20dp"
+              android:id="@+id/checkPrice"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:layout_gravity="center"
+              android:text="check Total Price"
+              style="@style/BookButton"
+              android:paddingLeft="5dp"
+              android:paddingRight="5dp"/>
+
+          <RelativeLayout
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:layout_marginTop="20dp">
+
+              <TextView
+                  android:id="@+id/priceLabel"
+                  android:layout_width="wrap_content"
+                  android:layout_height="wrap_content"
+                  android:layout_gravity="center"
+                  android:layout_marginLeft="50sp"
+                  android:text="TOTAL PRICE: $"
+                  android:textSize="24dp" />
+
+              <TextView
+                  android:id="@+id/priceTag"
+                  android:layout_width="wrap_content"
+                  android:layout_height="wrap_content"
+                  android:layout_gravity="end"
+                  android:layout_marginStart="0dp"
+                  android:layout_toEndOf="@+id/priceLabel"
+                  android:text="0"
+                  android:textSize="24dp" />
+
+          </RelativeLayout>
+
+          <LinearLayout
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:orientation="vertical"
+              android:layout_marginTop="10dp"
+              android:layout_marginBottom="10dp">
+
+              <TextView
+                  android:layout_width="match_parent"
+                  android:layout_height="wrap_content"
+                  android:text="CONTACT INFORMATION"
+                  android:layout_marginBottom="10dp"/>
+
+              <LinearLayout
+                  android:layout_width="match_parent"
+                  android:layout_height="wrap_content"
+                  android:orientation="vertical">
+
+                  <TextView
+                      android:layout_width="match_parent"
+                      android:layout_height="wrap_content"
+                      android:text="Name"
+                      android:textSize="18dp"/>
+
+                  <EditText
+                      android:id="@+id/name"
+                      style="@style/EditTextStyle"
+                      android:layout_width="match_parent"
+                      android:layout_height="wrap_content"/>
+
+              </LinearLayout>
+
+              <LinearLayout
+                  android:layout_width="match_parent"
+                  android:layout_height="wrap_content"
+                  android:orientation="vertical">
+
+                  <TextView
+                      android:layout_width="match_parent"
+                      android:layout_height="wrap_content"
+                      android:text="Email"
+                      android:textSize="18dp"/>
+
+                  <EditText
+                      android:id="@+id/email"
+                      android:hint="xx@email.com"
+                      style="@style/EditTextStyle"
+                      android:layout_width="match_parent"
+                      android:layout_height="wrap_content"/>
+
+              </LinearLayout>
+
+              <LinearLayout
+                  android:layout_width="match_parent"
+                  android:layout_height="wrap_content"
+                  android:orientation="vertical">
+
+                  <TextView
+                      android:layout_width="match_parent"
+                      android:layout_height="wrap_content"
+                      android:text="Contact"
+                      android:textSize="18dp"/>
+
+                  <EditText
+                      android:id="@+id/contact"
+                      android:hint="+233 XX XXX XXXX"
+                      style="@style/EditTextStyle"
+                      android:layout_width="match_parent"
+                      android:layout_height="wrap_content"/>
+
+              </LinearLayout>
+
+          </LinearLayout>
+
+          <TextView
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:text="Payment Option"
+              android:textSize="24dp"
+              android:layout_marginBottom="10dp"/>
+
+          <LinearLayout
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:orientation="vertical">
+
+              <CheckBox
+                  android:id="@+id/paypal"
+                  android:layout_width="wrap_content"
+                  android:layout_height="wrap_content"
+                  android:text="PayPal"/>
+
+              <CheckBox
+                  android:id="@+id/creditCard"
+                  android:layout_width="wrap_content"
+                  android:layout_height="wrap_content"
+                  android:text="Credit Card"/>
+
+              <CheckBox
+                  android:id="@+id/debitCard"
+                  android:layout_width="wrap_content"
+                  android:layout_height="wrap_content"
+                  android:text="Visa or MasterCard "/>
+
+              <CheckBox
+                  android:id="@+id/mobilMoney"
+                  android:layout_width="wrap_content"
+                  android:layout_height="wrap_content"
+                  android:text="Mobile Money"/>
+
+          </LinearLayout>
+
+
+          <Button
+              android:id="@+id/bookMe"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:text="Book Now"
+              style="@style/BookButton"
+              android:layout_gravity="center"
+              android:padding="10dp"
+              android:layout_marginTop="20dp"/>
+
+      </LinearLayout>
+  </ScrollView>
+
+</LinearLayout>
