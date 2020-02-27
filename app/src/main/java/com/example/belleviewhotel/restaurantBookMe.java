@@ -113,12 +113,12 @@ public class restaurantBookMe extends AppCompatActivity {
         ref.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                for (DataSnapshot snapshot: dataSnapshot.getChildren()){
-                    for (DataSnapshot snapshot1: snapshot.getChildren()){
-                        Log.d("View",snapshot1.getValue().toString());
-                        if (snapshot1.getValue().toString().contains("True")){
-                                fullAlert("Sorry, all slot has been booked");
-                            }else{
+//                for (DataSnapshot snapshot: dataSnapshot.getChildren()){
+//                    for (DataSnapshot snapshot1: snapshot.getChildren()){
+//                        Log.d("View",snapshot1.getValue().toString());
+//                        if (snapshot1.getValue().toString().contains("True")){
+//                                fullAlert("Sorry, all slot has been booked");
+//                            }else{
 
                                 map.put("Name Of Customer",nameOfCustomer.getText().toString());
                                 map.put("Seat Number", seatNumber.getText().toString());
@@ -134,10 +134,10 @@ public class restaurantBookMe extends AppCompatActivity {
                                         Toast.makeText(getApplicationContext(), e.getMessage(), Toast.LENGTH_SHORT).show();
                                     }
                                 });
-                            }
+//                            }
                         }
-                    }
-            }
+//                    }
+//            }
 
             @Override
             public void onCancelled(@NonNull DatabaseError databaseError) {
